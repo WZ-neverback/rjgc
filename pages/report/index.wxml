@@ -6,7 +6,7 @@
 	</view>
 	<view class="cu-form-group">
 		<view class="title">手机号码</view>
-		<input placeholder="请输入您的手机号"></input>
+		<input type="number" bindinput="hideKeyboard" placeholder="请输入您的手机号"></input>
 		<view class="cu-capsule radius">
 			<view class="cu-tag bg-blue">
 				+86
@@ -60,7 +60,12 @@
 		<view class="title">问题描述</view>
 		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="请简述问题情况"></textarea>
 	</view>
-<button type="submit">提交</button>
+<button form-type="submit" bindtap="changeHidden">提交</button>
 </form>
-
+<!-- 提交中 -->
+<view>
+ <loading hidden="{{hidden}}">
+  提交中...
+ </loading>
+</view>
 

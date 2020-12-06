@@ -68,7 +68,7 @@
   color: #FFFFFF;
   text-align:center;
   margin:50px 30px;
-  border-radius:2px;
+  border-radius:10px;
 }
 .active{
   background:#ff5f19;

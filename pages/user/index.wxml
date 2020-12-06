@@ -15,19 +15,19 @@
   </navigator>
   <view class='icon'>
     <navigator url="/pages/order/index?type=1" hover-class="none" >
-      <image src='/images/pending_payment.png' mode="aspectFit"></image>
+      <image src='/images/check.png' mode="aspectFit"></image>
       <text>待维护</text>
     </navigator>
     <navigator url="/pages/order/index?type=2" hover-class="none" >
-      <image src='/images/pending_delivery.png' mode="aspectFit"></image>
+      <image src='/images/repair.png' mode="aspectFit"></image>
       <text>维护中</text>
     </navigator>
     <navigator url="/pages/order/index?type=3" hover-class="none" >
-      <image src='/images/already_shipped.png' mode="aspectFit"></image>
+      <image src='/images/developed.png' mode="aspectFit"></image>
       <text>已完成</text>
     </navigator>
     <navigator url="/pages/order/index?type=4" hover-class="none" >
-      <image src='/images/completed.png' mode="aspectFit"></image>
+      <image src='/images/finish.png' mode="aspectFit"></image>
       <text>待评价</text>
     </navigator>
   </view>

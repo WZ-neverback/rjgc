@@ -1,5 +1,10 @@
 <!--index.wxml-->
-
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="搜索" confirm-type="search"></input>
+  </view>
+</view>
 <view class="SearchBar">
 </view>
 <view class="swiper">
@@ -12,7 +17,42 @@
     </swiper>
 </view>
 
+<view class="cu-card article {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">培正维护中心内测啦！~</view>
+    </view>
+    <view class="content">
+      <image src="../../images/pz.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 本小程序由练豪杰团队制作，现于2020年12月5日上线内测，后续将不定期更新发布~</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">小程序</view>
+          <view class="cu-tag bg-green light sm round">维护</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cu-card article {{isCard?'no-card':''}}">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">师兄师姐毕业快乐~</view>
+    </view>
+    <view class="content">
+      <image src="../../images/by.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 培正红蓝电脑协会技术部师兄师姐们毕业了，祝福他们前程似锦，一展宏图~</view>
+        <view>
+          <view class="cu-tag bg-red light sm round">毕业</view>
+          <view class="cu-tag bg-green light sm round">电协</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+
   <view class='title'>
-    <text class='cn'>猜你喜欢</text>
-    <text class='en'>Lovely</text>
+    <text class='cn'>~到底啦~</text>
   </view>

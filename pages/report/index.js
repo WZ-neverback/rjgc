@@ -2,6 +2,7 @@
 const app = getApp();
 Page({
   data: {
+    hidden:true,
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     items:[
@@ -65,6 +66,11 @@ Page({
     modalName: null,
     textareaBValue: ''
   },
+  hideKeyboard:function(e){
+    if(e.detail.value.length>=11){
+      wx.hideKeyboard()
+  }
+},
   checkboxChange:function(e){
     console.log('你选中的项目有:'+e.detail.value);
  },
@@ -153,5 +159,22 @@ Page({
   },
   submit:function(e){
     console.log(e.detail.value);
-  }
+  },
+  changeHidden: function(){
+    wx.showToast({
+      title: '提交中',
+      icon: 'loading',
+      duration: 1000
+  });
+  setTimeout(function(){
+    wx.showToast({
+      title: '提交成功'
+    })
+  },1000),
+  setTimeout(function(){
+      wx.switchTab({
+         url: '/pages/index/index'
+      })  
+  },1500)
+}
 })

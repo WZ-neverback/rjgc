@@ -27,8 +27,8 @@
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/Shopping.png",
-        "iconPath": "images/shopping_select.png",
+        "selectedIconPath": "images/repair_y.png",
+        "iconPath": "images/repair.png",
         "pagePath": "pages/report/index",
         "text": "报修"
       },

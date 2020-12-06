@@ -1,5 +1,5 @@
 .top{
- height: 40vh;
+ height: 30vh;
  border-bottom: 3px solid #dedede;
  background: #fff;
  display: flex;
