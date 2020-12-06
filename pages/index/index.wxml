@@ -1,0 +1,18 @@
+<!--index.wxml-->
+
+<view class="SearchBar">
+</view>
+<view class="swiper">
+<swiper class="banner"  autoplay="true" interval="2000" duration="300" bindchange="switchTab">
+        <block wx:for="{{sliderList}}">
+            <swiper-item>
+                <image style="width: 100%;height: 100%;"src="{{item.imageSource}}"/>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+  <view class='title'>
+    <text class='cn'>猜你喜欢</text>
+    <text class='en'>Lovely</text>
+  </view>

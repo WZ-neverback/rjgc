@@ -1,0 +1,16 @@
+@import "colorui/main.wxss";
+@import "colorui/icon.wxss";
+/**app.wxss**/
+@import "/lib/weui.wxss";
+.container {
+  height: 100%;
+} 
+image{
+  width: 100%;
+}
+.right{
+  float: right;
+}
+.left{
+  float: left;
+}
