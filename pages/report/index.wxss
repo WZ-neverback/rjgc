@@ -10,25 +10,13 @@ button{
 textarea{
   height: 5;
 }
-checkbox{
-  margin: auto 1px;
-}
 checkbox .wx-checkbox-input{
   border-radius: 50%;/* 圆角 */
   width: 40rpx; /* 背景的宽 */
   height: 40rpx; /* 背景的高 */
 }
-/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+/* 选中后的 背景样式 */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked{
-  border: none;
-  background: red;
+  border: none !important; 
 }
-/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
-checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
-  width:0rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
-  height:0rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
-  text-align:center;
-  font-size:0;/* 对勾大小 0rpx */
-  color:#fff;/* 对勾颜色 白色 */
-  background-color:#fff;
-}
+
