@@ -1,10 +1,15 @@
 //index.js
+
+import WxValidate from "../../utils/WxValidate.js";
 const app = getApp();
 Page({
   data: {
+    form:{
+      name:'',
+      phone:'',
+      problem:''
+    },
     hidden:true,
-    StatusBar: app.globalData.StatusBar,
-    CustomBar: app.globalData.CustomBar,
     items:[
       {name:'网络',value:'1'},
       {name:'电脑',value:'2'},
@@ -63,8 +68,7 @@ Page({
     ],
     multiIndex: [0, 0],
     imgList: [],
-    modalName: null,
-    textareaBValue: ''
+    modalName: null
   },
   hideKeyboard:function(e){
     if(e.detail.value.length>=11){
@@ -152,29 +156,79 @@ Page({
       }
     })
   },
-  textareaBInput(e) {
-    this.setData({
-      textareaBValue: e.detail.value
-    })
-  },
-  submit:function(e){
-    console.log(e.detail.value);
-  },
-  changeHidden: function(){
-    wx.showToast({
-      title: '提交中',
-      icon: 'loading',
-      duration: 1000
+
+// 初始化表单验证
+onLoad: function () {
+  this.initValidate();
+},
+// 报错
+showModal(error) {
+  wx.showModal({
+    content: error.msg,
+    showCancel: false,
+  })
+},
+
+initValidate() {
+  const rules = {
+    name: {
+      required: true,
+      maxlength: 10
+    },
+    phone: {
+      required: true,
+      tel: true
+    },
+    problem:{
+      required: true,
+      minlength: 2
+    }
+  }
+
+  const message = {
+    name: {
+      required: '请输入姓名',
+      maxlength: '名字不能超过10个字'
+    },
+    phone: {
+      required:'请填写手机号',
+      tel:'请填写正确的手机号'
+    }, 
+    problem: {
+      required: '请输入存在的问题',
+      minlength: '信息描述最少2个字'
+    }
+  }
+  //实例化当前的验证规则和提示消息
+  this.WxValidate = new WxValidate(rules, message);
+},
+formSubmit: function(e) {
+  console.log('form发生了submit事件，携带的数据为：', e.detail.value)
+  const params = e.detail.value
+  //校验表单
+  if (!this.WxValidate.checkForm(params)) {
+    const error = this.WxValidate.errorList[0]
+    this.showModal(error)
+    return false
+  }
+
+  // 验证通过后执行部分
+  // 增加延时提交动画
+  wx.showToast({
+    title: '提交中',
+    icon: 'loading',
+    duration: 1000
   });
   setTimeout(function(){
     wx.showToast({
       title: '提交成功'
     })
   },1000),
+  // 设置自动跳转至首页
   setTimeout(function(){
       wx.switchTab({
-         url: '/pages/index/index'
+          url: '/pages/index/index'
       })  
   },1500)
-}
+ }
 })

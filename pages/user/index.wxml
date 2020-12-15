@@ -31,7 +31,7 @@
       <text>待评价</text>
     </navigator>
   </view>
-  <navigator url="/pages/coupon/index" class='item'>
+  <navigator url="/pages/open/index" class='item'>
     <view class='left'>
       我的信息
     </view>

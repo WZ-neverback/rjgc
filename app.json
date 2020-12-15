@@ -4,6 +4,7 @@
     "pages/user/index",
     "pages/bindPhone/index",
     "pages/order/index",
+    "pages/open/index",
     "pages/report/index",
     "pages/addressList/index",
     "pages/addressAdd/index"

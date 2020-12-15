@@ -1,0 +1,6 @@
+<!--pages/open/index.wxml-->
+<view class="text-center">
+  <text>loading</text>
+  <view>待开发中</view>
+</view>
+

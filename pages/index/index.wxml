@@ -25,7 +25,7 @@
     <view class="content">
       <image src="../../images/pz.jpg" mode="aspectFill"></image>
       <view class="desc">
-        <view class="text-content"> 本小程序由练豪杰团队制作，现于2020年12月5日上线内测，后续将不定期更新发布~</view>
+        <view class="text-content"> 本小程序由王佐团队制作，现于2020年12月5日上线内测，后续将不定期更新发布~</view>
         <view>
           <view class="cu-tag bg-red light sm round">小程序</view>
           <view class="cu-tag bg-green light sm round">维护</view>

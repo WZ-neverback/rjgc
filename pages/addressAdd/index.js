@@ -11,6 +11,7 @@ Page({
       ['1栋', '2栋', '3栋', '4栋', '5栋']
     ],
     multiIndex: [0, 0],
+    hidden:true,
     name:'',
     mobile:'',
     detailed:'',
@@ -55,12 +56,6 @@ Page({
     }
     this.setData(data);
   },
-  bindSemesterChange:function(e){
-    console.log(e.detail)
-    this.setData({
-      index: e.detail.value
-    })
-  },
   bindKeyName: function (e) {
     this.setData({
       name: e.detail.value
@@ -76,100 +71,26 @@ Page({
       detailed: e.detail.value
     })
   },
-  submitFun: function () {
-    if (this.data.addressIs){ //添加
-      app.http('v1/user/addCity', {
-        name: this.data.name,
-        mobile: this.data.mobile,
-        detailed: this.data.detailed,
-        city: this.data.region
-      }, 'POST')
-        .then(res => {
-          if (res.code == 200) {
-            wx.navigateBack({
-              delta: 1
-            })
-          }
-        })
-    }else{
-      app.http('v1/user/editCity', {
-        name: this.data.name,
-        mobile: this.data.mobile,
-        detailed: this.data.detailed,
-        city: this.data.region,
-        id: this.data._id
-      }, 'POST')
-        .then(res => {
-          if (res.code == 200) {
-            wx.navigateBack({
-              delta: 1
-            })
-          }
-        })
-    }
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    if (options.id){
-      this.setData({
-          region: options.city.split(','),
-          name: options.name,
-          mobile: options.mobile,
-          detailed: options.detailed,
-          _id: options.id,
-          addressIs:false
-      })
-    }
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  submit:function(e){
+    console.log(e.detail.value);
   },
+  changeHidden: function(){
+    wx.showToast({
+      title: '提交中',
+      icon: 'loading',
+      duration: 1000
+  });
+  setTimeout(function(){
+    wx.showToast({
+      title: '提交成功'
+    })
+  },1000),
+  setTimeout(function(){
+      wx.switchTab({
+         url: '/pages/index/index'
+      })  
+  },1500)
+}
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

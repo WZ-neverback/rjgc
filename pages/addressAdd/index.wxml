@@ -1,3 +1,4 @@
+<form>
 <view class="main">
   <view class='data'>
     <!-- <view class='item'>
@@ -32,5 +33,12 @@
       <input type='text' bindinput="bindKeyDetailed"  value="{{detailed}}" placeholder='待输入'></input>
     </view>
   </view>
-  <view class='btn active' bindtap='submitFun'>保存</view>
+  <button class='btn active' form-type="submit" bindtap='changeHidden'>保存</button>
+</view>
+</form>
+<!-- 提交中 -->
+<view>
+ <loading hidden="{{hidden}}">
+  提交中...
+ </loading>
 </view>

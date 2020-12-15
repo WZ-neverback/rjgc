@@ -1,12 +1,12 @@
 
-<form>
+<form bindsubmit="formSubmit">
 	<view class="cu-form-group margin-top">
 		<view class="title">姓名</view>
-		<input placeholder="请输入您的联系名"></input>
+		<input placeholder="请输入您的联系名" name="name"></input>
 	</view>
 	<view class="cu-form-group">
 		<view class="title">手机号码</view>
-		<input type="number" bindinput="hideKeyboard" placeholder="请输入您的手机号"></input>
+		<input type="number" bindinput="hideKeyboard" placeholder="请输入您的手机号" name="phone"></input>
 		<view class="cu-capsule radius">
 			<view class="cu-tag bg-blue">
 				+86
@@ -57,10 +57,10 @@
 	</view>
 
 	<view class="cu-form-group align-start">
-		<view class="title">问题描述</view>
-		<textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaBInput" placeholder="请简述问题情况"></textarea>
+		<view class="title" >问题描述</view>
+		<textarea maxlength="-1" placeholder="请简述问题情况" name="problem"></textarea>
 	</view>
-<button form-type="submit" bindtap="changeHidden">提交</button>
+<button form-type="submit">提交</button>
 </form>
 <!-- 提交中 -->
 <view>
