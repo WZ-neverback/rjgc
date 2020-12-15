@@ -8,10 +8,10 @@
 		<view class="title">手机号码</view>
 		<input type="number" bindinput="hideKeyboard" placeholder="请输入您的手机号" name="phone"></input>
 		<view class="cu-capsule radius">
-			<view class="cu-tag bg-blue">
+			<view class="cu-tag bg-orange">
 				+86
 			</view>
-			<view class="cu-tag line-blue">
+			<view class="cu-tag line-bg-orange">
 				中国大陆
 			</view>
 		</view>
